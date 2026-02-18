@@ -92,7 +92,7 @@ const FeaturesSection = () => {
             return (
               <div
                 key={feature.title}
-                className="group relative bg-card rounded-2xl p-7 shadow-card border  hover:shadow-lg-custom hover:border-primary/20 transition-all duration-300 hover:-translate-y-1"
+                className="group relative bg-card rounded-2xl p-7 shadow-card hover:shadow-lg-custom border-primary/20 transition-all duration-300 hover:-translate-y-1"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Background gradient on hover */}
@@ -111,7 +111,7 @@ const FeaturesSection = () => {
                   <h3 className="font-sora font-semibold text-lg text-foreground mb-3 group-hover:text-primary transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-primary/80 text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

@@ -129,7 +129,7 @@ const HeroSection = () => {
               </div>
 
               {/* Floating stat cards */}
-              <div className="absolute -left-8 top-1/4 bg-card/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom  animate-slide-in-left">
+              <div className="absolute -left-20 top-1/4 bg-card/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom  animate-slide-in-left">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl gradient-cta flex items-center justify-center">
                     <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
@@ -141,10 +141,10 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="absolute -right-6 bottom-1/4 bg-card/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom ">
+              <div className="absolute -right-24 bottom-1/4 bg-card/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom ">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl gradient-hero flex items-center justify-center">
-                    <Star className="w-5 h-5 text-mint" />
+                  <div className="w-10 h-10 rounded-xl gradient-cta flex items-center justify-center">
+                    <Star className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
                     <p className="text-2xl font-sora font-bold text-foreground">50K+</p>
