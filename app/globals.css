@@ -3,7 +3,7 @@
 
 @layer base {
   :root {
-    /* Core Brand */
+  
     --background: 200 20% 98%;
     --foreground: 210 35% 10%;
 
@@ -13,11 +13,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 35% 10%;
 
-    /* Teal primary */
+  
     --primary: 183 72% 22%;
     --primary-foreground: 0 0% 98%;
 
-    /* Mint accent */
+ 
     --accent-mint: 158 62% 48%;
     --accent-mint-foreground: 0 0% 100%;
 
@@ -39,13 +39,13 @@
 
     --radius: 0.75rem;
 
-    /* Gradients */
+  
     --gradient-hero: linear-gradient(135deg, hsl(183, 72%, 14%) 0%, hsl(190, 68%, 22%) 50%, hsl(175, 60%, 28%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(200, 30%, 97%) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(158, 62%, 42%) 0%, hsl(183, 72%, 22%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(200, 20%, 98%) 0%, hsl(200, 30%, 95%) 100%);
 
-    /* Shadows */
+
     --shadow-sm: 0 2px 8px -2px hsl(183 72% 22% / 0.08);
     --shadow-md: 0 8px 24px -4px hsl(183 72% 22% / 0.12);
     --shadow-lg: 0 20px 48px -8px hsl(183 72% 22% / 0.18);
