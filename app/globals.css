@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 @config "../tailwind.config.js";
 
 @layer base {
@@ -116,7 +116,7 @@ html {
   border-radius: 3px;
 }
 
-/* Animations */
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
@@ -148,4 +148,70 @@ html {
 }
 .animate-slide-in-left {
   animation: slideInLeft 0.7s ease-out forwards;
+} */
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    --background: 200 20% 98%;
+    --foreground: 210 35% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 35% 10%;
+
+    --primary: 183 72% 22%;
+    --primary-foreground: 0 0% 98%;
+
+    --accent-mint: 158 62% 48%;
+    --accent-mint-foreground: 0 0% 100%;
+
+    --secondary: 200 30% 94%;
+    --secondary-foreground: 183 72% 22%;
+
+    --muted: 200 20% 94%;
+    --muted-foreground: 210 20% 45%;
+
+    --border: 200 25% 88%;
+    --input: 200 25% 88%;
+    --ring: 183 72% 22%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg,
+      hsl(183, 72%, 14%),
+      hsl(190, 68%, 22%),
+      hsl(175, 60%, 28%)
+    );
+
+    --shadow-card: 0 4px 20px -4px hsl(183 72% 22% / 0.10);
+    --shadow-glow: 0 0 40px hsl(158 62% 48% / 0.25);
+  }
+
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+@utility gradient-cta {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
 }

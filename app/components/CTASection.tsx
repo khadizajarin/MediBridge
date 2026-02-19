@@ -34,7 +34,7 @@ const CTASection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-5xl mx-auto">
           <div className="gradient-hero rounded-3xl p-10 lg:p-16 relative overflow-hidden shadow-lg-custom">
-            {/* Internal bg decoration */}
+         
             <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-mint/15 blur-2xl pointer-events-none" />
             <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-primary/20 blur-3xl pointer-events-none" />
             <div
