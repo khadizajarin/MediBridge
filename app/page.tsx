@@ -6,6 +6,8 @@ import StatsSection from "./components/StatsSection";
 import DoctorsSection from "./components/DoctorsSection ";
 import HowItWorksSection from "./components/HowItWorksSection";
 import TestimonialsSection from "./components/TestimonialsSection ";
+import CTASection from "./components/CTASection";
+import Footer from "./components/ Footer";
 
 export default function Home() {
   return (
@@ -18,8 +20,10 @@ export default function Home() {
         <DoctorsSection></DoctorsSection>
         <HowItWorksSection></HowItWorksSection>
         <TestimonialsSection></TestimonialsSection>
+        <CTASection></CTASection>
        
       </main>
+      <Footer></Footer>
     </div>
   );
 }

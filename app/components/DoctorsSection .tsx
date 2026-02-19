@@ -41,7 +41,7 @@ const DoctorsSection = () => {
   return (
     <section id="doctors" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+       
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent border border-primary/20 mb-6">
             <span className="text-xs font-semibold text-primary tracking-wide uppercase">
@@ -57,15 +57,15 @@ const DoctorsSection = () => {
           </p>
         </div>
 
-        {/* Doctor Cards */}
+       
         <div className="grid md:grid-cols-3 gap-8">
           {doctors.map((doctor, index) => (
             <div
               key={doctor.name}
-              className="group bg-card rounded-3xl overflow-hidden shadow-card border-primary hover:shadow-lg-custom hover:border-primary/20 transition-all duration-300 hover:-translate-y-2"
+              className="group bg-card rounded-3xl overflow-hidden shadow-card border-primary/60 hover:shadow-lg-custom hover:border-primary/20 transition-all duration-300 hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Photo area */}
+             
               <div className="relative overflow-hidden ">
                 <Image
                   src={doctor.image}
@@ -74,7 +74,7 @@ const DoctorsSection = () => {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-primary/30 via-transparent to-transparent" />
 
-                {/* Badge */}
+                
                 <div className="absolute top-4 left-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-mint text-primary-foreground text-xs font-bold shadow-glow">
                     <Award className="w-3 h-3" />
@@ -82,21 +82,21 @@ const DoctorsSection = () => {
                   </span>
                 </div>
 
-                {/* Experience */}
+        
                 <div className="absolute top-4 right-4">
                   <span className="px-3 py-1.5 rounded-full bg-card/90 backdrop-blur-sm text-foreground text-xs font-semibold border border-border">
                     {doctor.experience} exp.
                   </span>
                 </div>
 
-                {/* Name overlay */}
+              
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="font-sora font-bold text-xl text-primary-foreground">{doctor.name}</h3>
                   <p className="text-primary-foreground/80 text-sm">{doctor.specialty}</p>
                 </div>
               </div>
 
-              {/* Card Body */}
+            
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <p className="text-muted-foreground text-sm">{doctor.hospital}</p>
@@ -131,7 +131,7 @@ const DoctorsSection = () => {
           ))}
         </div>
 
-        {/* View all CTA */}
+  
         <div className="text-center mt-12">
           <button className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200">
             View All Specialists
