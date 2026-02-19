@@ -112,12 +112,12 @@ const HeroSection = () => {
           </div>
 
           {/* Right — Hero Image */}
-          <div className="relative flex items-center justify-center animate-float">
+          <div className=" mt-10 lg:mt-0 relative flex items-center justify-center animate-float">
             <div className="relative">
-              {/* Glow ring */}
+          
               <div className="absolute inset-4 rounded-3xl bg-mint/20 blur-2xl animate-pulse-glow" />
 
-              {/* Main image card */}
+              
               <div className="relative rounded-3xl overflow-hidden shadow-lg-custom border border-primary-foreground/10">
                 <Image
                   src={heroDoctorImg}
@@ -128,26 +128,25 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-linear-to-t from-primary/40 via-transparent to-transparent" />
               </div>
 
-              {/* Floating stat cards */}
-              <div className="absolute -left-20 top-1/4 bg-card/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom  animate-slide-in-left">
+              <div className="absolute lg:-left-20 -left-2 lg:top-1/4 -top-8 lg:bg-card/95 lg:border-0 border border-primary-foreground backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom  animate-slide-in-left">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl gradient-cta flex items-center justify-center">
+                  <div className="lg:w-10 lg:h-10 rounded-xl gradient-cta flex items-center justify-center">
                     <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="text-2xl font-sora font-bold text-foreground">98%</p>
+                    <p className="lg:text-2xl font-sora font-bold text-foreground">98%</p>
                     <p className="text-xs text-muted-foreground">Patient Satisfaction</p>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute -right-24 bottom-1/4 bg-card/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom ">
+              <div className="absolute lg:-right-24 -right-2 lg:bottom-1/4 -bottom-10 lg:bg-card/95 lg:border-0 border border-primary-foreground backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom ">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl gradient-cta flex items-center justify-center">
-                    <Star className="w-5 h-5 text-primary-foreground" />
+                  <div className="lg:w-10 lg:h-10 rounded-xl gradient-cta flex items-center justify-center">
+                    <Star className="lg:w-5 lg:h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="text-2xl font-sora font-bold text-foreground">50K+</p>
+                    <p className="lg:text-2xl font-sora font-bold text-foreground">50K+</p>
                     <p className="text-xs text-muted-foreground">Appointments/mo</p>
                   </div>
                 </div>
