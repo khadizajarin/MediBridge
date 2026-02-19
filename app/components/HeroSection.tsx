@@ -130,7 +130,7 @@ const HeroSection = () => {
 
               <div className="absolute lg:-left-20 -left-2 lg:top-1/4 -top-8 lg:bg-card/95 lg:border-0 border border-primary-foreground backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom  animate-slide-in-left">
                 <div className="flex items-center gap-3">
-                  <div className="lg:w-10 lg:h-10 rounded-xl gradient-cta flex items-center justify-center">
+                  <div className="lg:w-10 lg:h-10 rounded-xl bg-mint flex items-center justify-center">
                     <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
@@ -142,7 +142,7 @@ const HeroSection = () => {
 
               <div className="absolute lg:-right-24 -right-2 lg:bottom-1/4 -bottom-10 lg:bg-card/95 lg:border-0 border border-primary-foreground backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom ">
                 <div className="flex items-center gap-3">
-                  <div className="lg:w-10 lg:h-10 rounded-xl gradient-cta flex items-center justify-center">
+                  <div className="lg:w-10 lg:h-10 rounded-xl bg-mint flex items-center justify-center">
                     <Star className="lg:w-5 lg:h-5 text-primary-foreground" />
                   </div>
                   <div>

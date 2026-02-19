@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="lg:col-span-2 space-y-6">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-xl gradient-cta flex items-center justify-center shadow-glow">
+              <div className="w-9 h-9 rounded-xl gradient-hero flex items-center justify-center shadow-glow">
                 <Heart className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
               </div>
               <span className="font-sora font-bold text-xl text-primary-foreground">

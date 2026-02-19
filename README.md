@@ -1,36 +1,209 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✨ Tailwind CSS Custom Design System
 
-## Getting Started
+A lightweight Tailwind CSS setup that replaces external design tokens with a clean, native configuration — while preserving gradients, semantic colors, animations, and reusable UI utilities.
 
-First, run the development server:
+This project focuses on:
+
+- Tailwind-first styling
+- Semantic color tokens
+- Reusable gradient utilities
+- Smooth animations
+- Clean global theming
+
+---
+
+## 🚀 Features
+
+### 🎨 Semantic Color System
+
+Colors are defined using CSS variables and mapped into Tailwind. This allows consistent styling and easy theme updates.
+
+Available tokens include:
+
+- Primary brand colors
+- Mint accent tones
+- Card surfaces
+- Background & foreground layers
+
+Update variables once → changes apply everywhere.
+
+---
+
+### 🌈 Gradient Utilities
+
+Reusable gradient classes powered by CSS variables:
+
+- `gradient-hero`
+- `gradient-cta`
+- `gradient-card`
+- `gradient-subtle`
+
+No inline CSS needed — just apply the utility class.
+
+Example:
+
+```html
+<div class="gradient-cta p-6 rounded-xl">
+  Call to Action
+</div>
+```
+
+---
+
+### 💫 Animation Utilities
+
+Built-in animations for smooth UI motion:
+
+- `animate-float`
+- `animate-pulse-glow`
+- `animate-fade-in-up`
+- `animate-slide-in-left`
+
+Example:
+
+```html
+<div class="animate-fade-in-up">
+  Animated content
+</div>
+```
+
+---
+
+### 🧱 Shadow Utilities
+
+Predefined elevation styles:
+
+- `shadow-card`
+- `shadow-glow`
+- `shadow-lg-custom`
+
+---
+
+## 📂 Project Structure
+
+```
+project-root
+│
+├── global.css
+│   → CSS variables
+│   → gradients
+│   → animations
+│
+├── tailwind.config.js
+│   → semantic color mapping
+│
+└── src/
+    → components & pages
+```
+
+---
+
+## ⚙ Installation
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 Styling Workflow
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Use semantic colors
 
-## Learn More
+Instead of raw hex values:
 
-To learn more about Next.js, take a look at the following resources:
+```html
+bg-[#12ffaa]
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Use:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```html
+bg-primary
+bg-mint
+text-card-foreground
+```
 
-## Deploy on Vercel
+This keeps styling scalable and consistent.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Use gradient utilities
+
+```html
+<div class="gradient-hero"></div>
+```
+
+---
+
+### Use animations
+
+```html
+<div class="animate-float"></div>
+```
+
+---
+
+## 🔧 Customization
+
+To modify theme colors:
+
+Open **global.css**:
+
+```css
+:root {
+  --primary: ...;
+  --accent-mint: ...;
+}
+```
+
+Tailwind automatically reflects the changes.
+
+---
+
+## 🧠 Design Philosophy
+
+This setup:
+
+✅ Removes external token dependency  
+✅ Keeps Tailwind workflow intact  
+✅ Enables scalable theming  
+✅ Promotes design consistency  
+✅ Reduces repeated styling  
+
+Perfect for maintainable UI systems.
+
+---
+
+## 📌 Best Practices
+
+- Prefer semantic classes over raw colors
+- Use utility gradients instead of inline styles
+- Keep animations subtle
+- Centralize theme updates in CSS variables
+
+---
+
+## 📜 License
+
+Open-source — free to customize and use in your projects.
+
+---
+
+## 🙌 Contributing
+
+Feel free to fork, experiment, and improve the design system.
+
+Pull requests are welcome!
+
+---
+
+**Built with Tailwind CSS + modern CSS architecture.**
