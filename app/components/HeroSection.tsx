@@ -135,7 +135,7 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <p className="lg:text-2xl font-sora font-bold text-foreground">98%</p>
-                    <p className="text-xs text-muted-foreground">Patient Satisfaction</p>
+                    <p className="text-xs lg:text-muted-foreground text-white">Patient Satisfaction</p>
                   </div>
                 </div>
               </div>
@@ -143,11 +143,11 @@ const HeroSection = () => {
               <div className="absolute lg:-right-24 -right-2 lg:bottom-1/4 -bottom-10 lg:bg-card/95 lg:border-0 border border-primary-foreground backdrop-blur-sm rounded-2xl p-4 shadow-lg-custom ">
                 <div className="flex items-center gap-3">
                   <div className="lg:w-10 lg:h-10 rounded-xl bg-mint flex items-center justify-center">
-                    <Star className="lg:w-5 lg:h-5 text-primary-foreground" />
+                    <Star className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
                     <p className="lg:text-2xl font-sora font-bold text-foreground">50K+</p>
-                    <p className="text-xs text-muted-foreground">Appointments/mo</p>
+                    <p className="text-xs lg:text-muted-foreground text-white">Appointments/mo</p>
                   </div>
                 </div>
               </div>

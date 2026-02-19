@@ -34,7 +34,6 @@ Update variables once → changes apply everywhere.
 Reusable gradient classes powered by CSS variables:
 
 - `gradient-hero`
-- `gradient-cta`
 - `gradient-card`
 - `gradient-subtle`
 
@@ -43,7 +42,7 @@ No inline CSS needed — just apply the utility class.
 Example:
 
 ```html
-<div class="gradient-cta p-6 rounded-xl">
+<div class="gradient-hero p-6 rounded-xl">
   Call to Action
 </div>
 ```
@@ -92,7 +91,7 @@ project-root
 ├── tailwind.config.js
 │   → semantic color mapping
 │
-└── src/
+└── app/
     → components & pages
 ```
 
