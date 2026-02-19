@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className="bg-[#111a22] text-primary-foreground">
       {/* Main footer content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid lg:grid-cols-6 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Logo */}
@@ -74,7 +74,7 @@ const Footer = () => {
               <h4 className="font-sora font-semibold text-sm text-primary-foreground mb-5 uppercase tracking-wider">
                 {category}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
                     <a

@@ -74,14 +74,14 @@ const HowItWorksSection = () => {
                     </div>
                   </div>
 
-                  <div className="bg-card rounded-2xl p-6 shadow-card border border-primary/50 border-border group-hover:border-primary/20 group-hover:shadow-lg-custom transition-all duration-300">
+                  <div className="bg-card rounded-2xl p-6 shadow-card border border-primary/80 group-hover:border-primary/20 group-hover:shadow-lg-custom transition-all duration-300">
                     <span className="text-primary/60 font-sora font-black text-4xl absolute opacity-0">
                       {step.number}
                     </span>
                     <h3 className="font-sora font-bold text-lg text-foreground mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground/40 text-sm leading-relaxed">
+                    <p className="text-muted-foreground/80 text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>

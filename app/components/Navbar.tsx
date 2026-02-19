@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
+            <div className="w-9 h-9 rounded-xl gradient-hero flex items-center justify-center shadow-glow">
               <Heart className="w-5 h-5 text-mint" strokeWidth={2.5} />
             </div>
             <span
