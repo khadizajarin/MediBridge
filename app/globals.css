@@ -1,4 +1,4 @@
-
+/* 
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
@@ -64,5 +64,121 @@
 
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+} */
+
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    /* LIGHT MODE - Your existing variables */
+    --background: 200 20% 98%;
+    --foreground: 210 35% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 35% 10%;
+
+    --primary: 183 72% 22%;
+    --primary-foreground: 0 0% 98%;
+
+    --accent-mint: 158 62% 48%;
+    --accent-mint-foreground: 0 0% 100%;
+
+    --secondary: 200 30% 94%;
+    --secondary-foreground: 183 72% 22%;
+
+    --muted: 200 20% 94%;
+    --muted-foreground: 210 20% 45%;
+
+    --border: 200 25% 88%;
+    --input: 200 25% 88%;
+    --ring: 183 72% 22%;
+
+    --radius: 0.75rem;
+
+    /* Gradients & Shadows */
+    --gradient-hero: linear-gradient(135deg,
+      hsl(183, 72%, 14%),
+      hsl(190, 68%, 22%),
+      hsl(175, 60%, 28%)
+    );
+    --gradient-hero-dark: radial-gradient(ellipse at top, hsl(var(--accent-mint)/0.1) 0%, hsl(var(--background)) 70%);
+
+    --shadow-card: 0 4px 20px -4px hsl(183 72% 22% / 0.10);
+    --shadow-card-dark: 0 4px 20px -4px hsl(0 0% 0% / 0.20);
+    --shadow-glow: 0 0 40px hsl(158 62% 48% / 0.25);
+    --shadow-glow-dark: 0 0 40px hsl(158 62% 48% / 0.4);
+    --shadow-lg-custom: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-lg-custom-dark: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* DARK MODE - Override light mode variables */
+  [data-theme="dark"],
+  .dark {
+    --background: 210 35% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 35% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --primary: 158 62% 48%;
+    --primary-foreground: 0 0% 98%;
+
+    --accent-mint: 158 62% 60%;
+    --accent-mint-foreground: 210 35% 10%;
+
+    --secondary: 210 35% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 35% 15%;
+    --muted-foreground: 210 20% 65%;
+
+    --border: 210 35% 20%;
+    --input: 210 35% 20%;
+    --ring: 158 62% 48%;
+
+    /* Use dark shadows */
+    --shadow-card: var(--shadow-card-dark);
+    --shadow-glow: var(--shadow-glow-dark);
+  }
+
+  /* Apply CSS variables to elements */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-hero-dark {
+    background: var(--gradient-hero-dark);
+  }
+
+  .shadow-card-custom {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow-custom {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-lg-custom {
+    box-shadow: var(--shadow-lg-custom);
+  }
+
+  .shadow-lg-custom-dark {
+    box-shadow: var(--shadow-lg-custom-dark);
   }
 }

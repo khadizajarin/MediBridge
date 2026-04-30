@@ -3,6 +3,7 @@ import doctor1Img from "@/app/assets/doctor-1.png";
 import doctor2Img from "@/app/assets/doctor-2.png";
 import doctor3Img from "@/app/assets/doctor-3.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const doctors = [
   {
@@ -133,10 +134,12 @@ const DoctorsSection = () => {
 
   
         <div className="text-center mt-12">
-          <button className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200">
-            View All Specialists
-            <span className="text-mint group-hover:text-primary-foreground">→</span>
-          </button>
+          <Link href="/doctors">
+            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200">
+              View All Specialists
+              <span className="text-mint group-hover:text-primary-foreground">→</span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

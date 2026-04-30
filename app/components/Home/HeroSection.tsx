@@ -2,6 +2,12 @@
 import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import heroDoctorImg from "@/app/assets/hero-doctor.png";
 import Image from "next/image";
+import CTASection from "./CTASection";
+import TestimonialsSection from "./TestimonialsSection ";
+import HowItWorksSection from "./HowItWorksSection";
+import DoctorsSection from "./DoctorsSection ";
+import StatsSection from "./StatsSection";
+import FeaturesSection from "./FeaturesSection";
 
 const badges = [
   "HIPAA Compliant",
@@ -16,7 +22,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden gradient-hero">
+    <div><section className="relative min-h-screen flex items-center overflow-hidden gradient-hero">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-150 h-150 rounded-full bg-mint/10 blur-3xl" />
@@ -165,7 +171,17 @@ const HeroSection = () => {
           />
         </svg>
       </div>
+
+     
     </section>
+        <FeaturesSection></FeaturesSection>
+        <StatsSection></StatsSection>
+        <DoctorsSection></DoctorsSection>
+        <HowItWorksSection></HowItWorksSection>
+        <TestimonialsSection></TestimonialsSection>
+        <CTASection></CTASection>
+    </div>
+    
   );
 };
 
