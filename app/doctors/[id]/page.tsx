@@ -6,14 +6,14 @@ import { Star, Award, MapPin, Calendar, Languages, GraduationCap, ArrowLeft, Ste
 import PageShell from "@/app/components/PageShell"
 import DoctorCard from "../DoctorCard"
 import { getDoctorById, getRelatedDoctors } from "@/data/doctors"
-import { use, useState } from "react"
+import { useState } from "react"
 
 interface DoctorPageProps {
   params: { id: string }
 }
 
 const DoctorDetails = ({ params }: DoctorPageProps) => {
-  const { id } = use(params);
+  const { id } = params ;
 
   const doctor = getDoctorById(id);
   if (!doctor) {
@@ -23,7 +23,7 @@ const DoctorDetails = ({ params }: DoctorPageProps) => {
   const relatedDoctors = getRelatedDoctors(doctor.id, doctor.specialty, 3)
   const [activeImage, setActiveImage] = useState(0)
   
-  const gallery = [doctor.image, doctor.image, doctor.image] // Use doctor's image
+  const gallery = [doctor.image, doctor.image, doctor.image] 
 
   return (
     <PageShell
@@ -214,7 +214,7 @@ const DoctorDetails = ({ params }: DoctorPageProps) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedDoctors.map((relatedDoctor) => (
-                <DoctorCard key={relatedDoctor.id} doctor={relatedDoctor as any} />
+                <DoctorCard key={relatedDoctor.id} doctor={relatedDoctor} />
               ))}
             </div>
           </section>

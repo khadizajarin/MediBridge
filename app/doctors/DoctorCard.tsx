@@ -4,7 +4,11 @@ import { doctors, specialties, cities, Doctor } from "@/data/doctors";
 import Link from "next/link";
 import Image from "next/image";
 
-const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
+
+type Props = {
+  doctor: Doctor;
+};
+const DoctorCard = ({ doctor }: Props) => {
   return (
     <article className="group bg-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-lg-custom hover:border-primary/20 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
       <div className="relative overflow-hidden h-56">
