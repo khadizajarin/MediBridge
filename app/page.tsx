@@ -10,8 +10,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navbar></Navbar>
       <main >
-        <HeroSection></HeroSection>
-       
+        <HeroSection></HeroSection> 
       </main>
       <Footer></Footer>
     </div>

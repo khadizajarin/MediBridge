@@ -1,19 +1,21 @@
-// import { Link } from "react-router-dom";
+
 import { Star, Award, MapPin } from "lucide-react";
 import { doctors, specialties, cities, Doctor } from "@/data/doctors";
 import Link from "next/link";
+import Image from "next/image";
 
 const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
   return (
     <article className="group bg-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-lg-custom hover:border-primary/20 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
       <div className="relative overflow-hidden h-56">
-        <img
+        <Image
           src={doctor.image}
           alt={`${doctor.name}, ${doctor.specialty}`}
           loading="lazy"
+          sizes="500"
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-foreground/70 via-transparent to-transparent" />
         <div className="absolute top-3 left-3">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-mint text-primary-foreground text-xs font-bold">
             <Award className="w-3 h-3" />
@@ -33,7 +35,7 @@ const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
 
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-center gap-1.5 text-muted-foreground text-xs mb-3">
-          <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+          <MapPin className="w-3.5 h-3.5 shrink-0" />
           <span className="line-clamp-1">{doctor.hospital}, {doctor.city}</span>
         </div>
 
