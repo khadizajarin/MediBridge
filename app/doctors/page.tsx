@@ -5,21 +5,11 @@ import PageShell from "@/app/components/PageShell";
 import DoctorCard from "./DoctorCard";
 import DoctorCardSkeleton from "./DoctorCardSkeleton";
 import { doctors, specialties, cities } from "@/data/doctors";
+import type { Doctor } from "@/data/doctors";
 
 
 const PAGE_SIZE = 8;
 
-type Doctor = {
-  id: number;
-  name: string;
-  specialty: string;
-  hospital: string;
-  city: string;
-  experience: number;
-  rating: number;
-  fee: number;
-  image: string;
-};
 
 type SortKey = "rating" | "experience" | "fee-asc" | "fee-desc";
 
@@ -38,14 +28,9 @@ const DoctorsPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Reset page on filter change
-  useEffect(() => {
-    setPage(1);
-  }, [query, specialty, city, sort]);
-
   // Filtered & sorted doctors
   const filteredDoctors = useMemo(() => {
-    let list: Doctor[] = doctors.filter((doctor) => {
+  const list = doctors.filter((doctor) => {
       const matchesQuery = !query || 
         doctor.name.toLowerCase().includes(query.toLowerCase()) ||
         doctor.specialty.toLowerCase().includes(query.toLowerCase()) ||
@@ -112,7 +97,10 @@ const DoctorsPage = () => {
               <input
                 type="search"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setPage(1);
+                }}
                 placeholder="Search by name, specialty or hospital..."
                 className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 transition-all text-sm"
               />
@@ -133,7 +121,10 @@ const DoctorsPage = () => {
             }`}>
               <select
                 value={specialty}
-                onChange={(e) => setSpecialty(e.target.value)}
+                onChange={(e) => {
+                  setSpecialty(e.target.value);
+                  setPage(1);
+                }}
                 className="px-4 py-3.5 rounded-xl bg-background border border-border text-foreground text-sm focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 transition-all"
               >
                 <option value="">All Specialties</option>
@@ -146,7 +137,10 @@ const DoctorsPage = () => {
 
               <select
                 value={city}
-                onChange={(e) => setCity(e.target.value)}
+                onChange={(e) => {
+                  setCity(e.target.value);
+                  setPage(1);
+                }}
                 className="px-4 py-3.5 rounded-xl bg-background border border-border text-foreground text-sm focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 transition-all"
               >
                 <option value="">All Cities</option>
@@ -159,7 +153,10 @@ const DoctorsPage = () => {
 
               <select
                 value={sort}
-                onChange={(e) => setSort(e.target.value as SortKey)}
+                onChange={(e) => {
+                  setSort(e.target.value as SortKey);
+                  setPage(1);
+                }}
                 className="px-4 py-3.5 rounded-xl bg-background border border-border text-foreground text-sm focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 transition-all"
               >
                 <option value="rating">Top Rated</option>
