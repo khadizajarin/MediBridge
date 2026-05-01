@@ -1,3 +1,4 @@
+"use client"
 import { TrendingUp, Users, DollarSign, Calendar, Download } from "lucide-react";
 import DashboardLayout from "../../CommonComponents/DashboardLayout";
 import { monthlyAppointments, specialtyDistribution } from "@/data/dashboard";
