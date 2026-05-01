@@ -2,7 +2,6 @@
 
 "use client";
 import { useEffect, useState } from "react";
-import { Loader2, Save } from "lucide-react";
 import DashboardLayout from "../../CommonComponents/DashboardLayout";
 import { useAuth } from "@/app/contexts/AuthContext";
 import { toast } from "react-hot-toast";
