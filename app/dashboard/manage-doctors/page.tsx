@@ -36,7 +36,7 @@ const ManageDoctors = () => {
       subtitle={`${filtered.length} of ${list.length} doctors listed`}
       actions={
         <button
-          onClick={() => toast.info("Add-doctor form coming soon")}
+          onClick={() => toast("Add-doctor form coming soon")}
           className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90"
         >
           <Plus className="w-4 h-4" /> Add doctor

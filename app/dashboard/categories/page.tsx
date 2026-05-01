@@ -61,7 +61,7 @@ const Categories = () => {
                   </div>
                 </div>
                 <div className="flex gap-1 shrink-0">
-                  <button onClick={() => toast.info("Edit coming soon")} className="p-2 rounded-lg hover:bg-accent text-muted-foreground"><Edit3 className="w-4 h-4" /></button>
+                  <button onClick={() => toast("Edit coming soon")} className="p-2 rounded-lg hover:bg-accent text-muted-foreground"><Edit3 className="w-4 h-4" /></button>
                   <button onClick={() => remove(c.id)} className="p-2 rounded-lg hover:bg-destructive/10 text-destructive"><Trash2 className="w-4 h-4" /></button>
                 </div>
               </div>
