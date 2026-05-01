@@ -1,3 +1,4 @@
+"use client"
 import { Pill, RefreshCw } from "lucide-react";
 import DashboardLayout from "../../CommonComponents/DashboardLayout";
 import { userPrescriptions } from "@/data/dashboard";
