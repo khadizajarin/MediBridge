@@ -8,20 +8,17 @@ import { useAuth } from "../contexts/AuthContext";
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { user, loading } = useAuth();
   const router = useRouter();
-  const pathname = usePathname(); // current URL track korar jonno
+  const pathname = usePathname(); 
 
   useEffect(() => {
-    // loading shesh kintu user nei - erokom obosthay login-e pathaw
     if (!loading && !user) {
       toast.error("Please sign in to continue");
-      
-      // redirect korar shomoy current path-ta pathiye dao
-      // jate login korar por abar ekhanei firte pare
+    
       router.push(`/login?from=${pathname}`);
     }
   }, [loading, user, router, pathname]);
 
-  // Loading state (Branded loader)
+  
   if (loading) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background">
@@ -45,12 +42,11 @@ const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   );
 }
 
-  // User na thakle kisu dekhabo na (useEffect redirect korbe)
+
   if (!user) {
     return null;
   }
 
-  // User login thakle page-er content dekhabo
   return <>{children}</>;
 };
 

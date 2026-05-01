@@ -1,4 +1,5 @@
 
+"use client"
 import { LayoutDashboard, Calendar, User as UserIcon, Settings, Users, Stethoscope, BarChart3, FolderTree, ShieldCheck } from "lucide-react";
 import PageShell from "@/app/components/PageShell";
 import { useAuth } from "@/app/contexts/AuthContext";

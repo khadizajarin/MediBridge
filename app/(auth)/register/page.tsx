@@ -24,9 +24,9 @@ const schema = z
       .regex(/[a-z]/)
       .regex(/\d/),
     confirm: z.string(),
-    terms: z.literal(true, {
-      errorMap: () => ({ message: "You must accept the terms" }),
-    }),
+    terms: z.boolean().refine((v) => v === true, {
+    message: "You must accept the terms",
+  })
   })
   .refine((d) => d.password === d.confirm, {
     message: "Passwords don't match",
@@ -45,7 +45,7 @@ const Register = () => {
     email: "",
     password: "",
     confirm: "",
-    terms: false as any,
+    terms: false,
   });
 
   const [errors, setErrors] = useState<Errors>({});
@@ -195,7 +195,7 @@ const Register = () => {
               <input
                 type="checkbox"
                 checked={!!form.terms}
-                onChange={(e) => update("terms", e.target.checked as any)}
+                onChange={(e) => update("terms", e.target.checked)}
               />
               I agree to terms
             </label>
