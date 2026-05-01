@@ -21,10 +21,12 @@ const DashboardLayout = ({
   children,
   title,
   subtitle,
+  actions,
 }: {
   children: React.ReactNode;
   title?: string;
   subtitle?: string;
+  actions?: React.ReactNode;
 }) => {
   const pathname = usePathname();
 
@@ -89,10 +91,10 @@ const DashboardLayout = ({
             )}
           </div>
 
-          {/* Right side (optional future: avatar, theme toggle) */}
           <div className="flex items-center gap-3">
-            {/* placeholder */}
+            {actions}
           </div>
+
         </header>
 
         {/* Content */}

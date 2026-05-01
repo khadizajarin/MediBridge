@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { Bell, Globe, Lock, Trash2 } from "lucide-react";
+import { Bell, Globe, Lock, LucideIcon, Trash2 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import DashboardLayout from "../../CommonComponents/DashboardLayout";
 
@@ -30,30 +30,35 @@ const Toggle = ({
 
 const Settings = () => {
   type NotifKey = "email" | "sms" | "marketing" | "reminders";
-
   const [notif, setNotif] = useState<Record<NotifKey, boolean>>({
     email: true,
     sms: false,
     marketing: false,
     reminders: true,
   });
+    const rows: { key: NotifKey; label: string; desc: string }[] = [
+    { key: "email", label: "Email notifications", desc: "..." },
+    { key: "sms", label: "SMS reminders", desc: "..." },
+    { key: "reminders", label: "Refill reminders", desc: "..." },
+    { key: "marketing", label: "Product news", desc: "..." },
+  ];
+
   return (
     <DashboardLayout title="Settings" subtitle="Manage preferences, notifications, and security">
       <div className="grid gap-6 max-w-3xl">
         <Card icon={Bell} title="Notifications" description="How we keep you informed">
-          {[
-            { key: "email", label: "Email notifications", desc: "Appointment confirmations and updates" },
-            { key: "sms", label: "SMS reminders", desc: "Text messages for upcoming visits" },
-            { key: "reminders", label: "Refill reminders", desc: "Notify me when prescriptions need refilling" },
-            { key: "marketing", label: "Product news", desc: "Occasional updates about new features" },
-          ].map((row) => (
-            <div key={row.key} className="flex items-center justify-between py-3 border-b border-border last:border-0">
+          {rows.map((row) => (
+            <div
+              key={row.key}
+              className="flex items-center justify-between py-3 border-b border-border last:border-0"
+            >
               <div>
                 <p className="text-sm font-medium text-foreground">{row.label}</p>
                 <p className="text-xs text-muted-foreground">{row.desc}</p>
               </div>
+
               <Toggle
-               checked={notif[row.key as NotifKey]}
+                checked={notif[row.key]}
                 onChange={(v) => {
                   setNotif({ ...notif, [row.key]: v });
                   toast.success(`${row.label} ${v ? "enabled" : "disabled"}`);
@@ -106,7 +111,15 @@ const Settings = () => {
   );
 };
 
-const Card = ({ icon: Icon, title, description, children }: any) => (
+
+type CardProps = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+};
+
+const Card = ({ icon: Icon, title, description, children }: CardProps) => (
   <div className="bg-card border border-border rounded-2xl p-6 shadow-card">
     <div className="flex items-start gap-3 mb-4">
       <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
@@ -120,12 +133,18 @@ const Card = ({ icon: Icon, title, description, children }: any) => (
     {children}
   </div>
 );
+type FieldProps = {
+  label: string;
+  children: React.ReactNode;
+};
 
-const Field = ({ label, children }: any) => (
+const Field = ({ label, children }: FieldProps) => (
   <label className="block">
-    <span className="text-xs font-semibold text-foreground block mb-1.5">{label}</span>
+    <span className="text-xs font-semibold text-foreground block mb-1.5">
+      {label}
+    </span>
     {children}
   </label>
-);
+);  
 
 export default Settings;

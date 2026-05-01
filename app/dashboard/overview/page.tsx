@@ -1,21 +1,33 @@
 "use client"
-import { Link } from "react-router-dom";
 import { Calendar, Pill, MessageCircle, Activity, Users, Stethoscope, TrendingUp, DollarSign, ArrowRight } from "lucide-react";
 import DashboardLayout from "../../CommonComponents/DashboardLayout";
 import { useAuth } from "@/app/contexts/AuthContext";
 import { userAppointments, userPrescriptions, adminUsers, monthlyAppointments } from "@/data/dashboard";
+import Link from "next/link";
 
-const StatCard = ({ icon: Icon, label, value, trend, accent = "primary" }: any) => (
+type StatCardProps = {
+  icon: React.ElementType;
+  label: string;
+  value: string | number;
+  trend?: string;
+  accent?: "primary" | "mint";
+};
+
+const StatCard = ({ icon: Icon, label, value, trend, accent = "primary" }: StatCardProps) => (
   <div className="bg-card border border-border rounded-2xl p-5 shadow-card">
     <div className="flex items-start justify-between">
       <div>
         <p className="text-xs uppercase tracking-wide font-semibold text-muted-foreground">{label}</p>
         <p className="font-sora font-bold text-2xl text-foreground mt-1">{value}</p>
       </div>
-      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${accent === "mint" ? "bg-mint/15 text-mint" : "bg-primary/10 text-primary"}`}>
+
+      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+        accent === "mint" ? "bg-mint/15 text-mint" : "bg-primary/10 text-primary"
+      }`}>
         <Icon className="w-5 h-5" />
       </div>
     </div>
+
     {trend && (
       <p className="text-xs text-muted-foreground mt-3 flex items-center gap-1">
         <TrendingUp className="w-3 h-3 text-mint" /> {trend}
@@ -26,13 +38,22 @@ const StatCard = ({ icon: Icon, label, value, trend, accent = "primary" }: any) 
 
 const Overview = () => {
   const { user } = useAuth();
-  if (!user) return null;
+
+  if (!user) {
+    return (
+      <DashboardLayout title="Loading..." subtitle="">
+        <div className="text-muted-foreground text-sm">Loading dashboard...</div>
+      </DashboardLayout>
+    );
+  }
+
   const isAdmin = user.role === "admin";
+  const firstName = user.name?.split(" ")?.[0] ?? "User";
   const upcoming = userAppointments.filter((a) => a.status === "upcoming");
 
   return (
     <DashboardLayout
-      title={`Welcome back, ${user.name.split(" ")[0]}`}
+      title={`Welcome back, ${firstName}`}
       subtitle={isAdmin ? "Overview of your clinic operations" : "Your health at a glance"}
     >
       <div className="space-y-6">
@@ -63,7 +84,7 @@ const Overview = () => {
                 {isAdmin ? "Appointments — last 6 months" : "Upcoming appointments"}
               </h2>
               {!isAdmin && (
-                <Link to="/dashboard/appointments" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
+                <Link href="/dashboard/appointments" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
                   View all <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               )}
@@ -126,12 +147,23 @@ const Overview = () => {
   );
 };
 
-const QuickAction = ({ to, label, icon: Icon }: any) => (
-  <Link to={to} className="flex items-center gap-3 p-3 rounded-xl border border-border hover:bg-accent transition-colors">
+type QuickActionProps = {
+  to: string;
+  label: string;
+  icon: React.ElementType;
+};
+
+const QuickAction = ({ to, label, icon: Icon }: QuickActionProps) => (
+  <Link
+    href={to}
+    className="flex items-center gap-3 p-3 rounded-xl border border-border hover:bg-accent transition-colors"
+  >
     <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
       <Icon className="w-4 h-4" />
     </div>
+
     <span className="text-sm font-medium text-foreground flex-1">{label}</span>
+
     <ArrowRight className="w-4 h-4 text-muted-foreground" />
   </Link>
 );
