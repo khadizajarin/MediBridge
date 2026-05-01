@@ -7,19 +7,19 @@ import Link from "next/link";
 import ProtectedRoute from "../components/ProtectedRoute";
 
 const userMenu = [
-  { label: "Overview", to: "/dashboard", icon: LayoutDashboard },
-  { label: "My Appointments", to: "/dashboard", icon: Calendar },
-  { label: "Profile", to: "/dashboard", icon: UserIcon },
-  { label: "Settings", to: "/dashboard", icon: Settings },
+  { label: "Overview", to: "/dashboard/overview", icon: LayoutDashboard },
+  { label: "My Appointments", to: "/dashboard/appointments", icon: Calendar },
+  { label: "Profile", to: "/dashboard/profile", icon: UserIcon },
+  { label: "Settings", to: "/dashboard/settings", icon: Settings },
 ];
 
 const adminMenu = [
-  { label: "Overview", to: "/dashboard", icon: LayoutDashboard },
-  { label: "Manage Users", to: "/dashboard", icon: Users },
-  { label: "Manage Doctors", to: "/dashboard", icon: Stethoscope },
-  { label: "Reports", to: "/dashboard", icon: BarChart3 },
-  { label: "Categories", to: "/dashboard", icon: FolderTree },
-  { label: "Settings", to: "/dashboard", icon: Settings },
+  { label: "Overview", to: "/dashboard/overview", icon: LayoutDashboard },
+  { label: "Manage Users", to: "/dashboard/manage-users", icon: Users },
+  { label: "Manage Doctors", to: "/dashboard/manage-doctors", icon: Stethoscope },
+  { label: "Reports", to: "/dashboard/reports", icon: BarChart3 },
+  { label: "Categories", to: "/dashboard/categories", icon: FolderTree },
+  { label: "Settings", to: "/dashboard/settings", icon: Settings },
 ];
 
 const Dashboard = () => {
@@ -30,15 +30,15 @@ const Dashboard = () => {
 
   return (
     <ProtectedRoute>
-        <PageShell
-      eyebrow={isAdmin ? "Admin dashboard" : "Patient dashboard"}
-      title={`Welcome back, ${user.name.split(" ")[0]}`}
-      subtitle={
-        isAdmin
-          ? "Manage your clinic, users, and reports from one place."
-          : "Track your upcoming appointments and personal health information."
-      }
-    >
+      <PageShell
+        eyebrow={isAdmin ? "Admin dashboard" : "Patient dashboard"}
+        title={`Welcome back, ${user.name.split(" ")[0]}`}
+        subtitle={
+          isAdmin
+            ? "Manage your clinic, users, and reports from one place."
+            : "Track your upcoming appointments and personal health information."
+        }
+      >
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-[260px_1fr] gap-6">
           {/* Sidebar */}
